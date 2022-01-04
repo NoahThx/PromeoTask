@@ -1,0 +1,74 @@
+body{
+
+    background-color: #bdd4e7;
+    background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%);
+    min-height: 97vh;
+
+    font-family: Arial;
+}
+
+
+.Conn{
+
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: -5rem;
+    width: 30rem;
+    height: 25rem;
+    margin-left: 34%;
+    display: flex;
+    justify-content: center;
+
+
+}
+
+input{
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+input[type=text] {
+    border: 2px solid grey;
+    border-radius: 4px;
+    width: 98% ;
+    height: 35px;
+    display: flex;
+    justify-content: space-around;
+}
+input[type=password] {
+    border: 2px solid grey;
+    border-radius: 4px;
+    width: 98%;
+    height: 35px;
+}
+
+input[type=submit]{
+    background-color: #25096d;
+    background-image: linear-gradient(315deg, #2a109d 0%, #377cd6 74%);
+    border :none ;
+    color: white;
+    display: block;
+    font-family: inherit ;
+    font-size: 1.5rem;
+    width: 100% ;
+    padding: 1rem;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 0;
+
+}
+
+input[type=submit]:hover{
+    background-color: #4810c7;
+    background-image: linear-gradient(315deg, #38279b 0%, #164583 74%);
+
+
+}
+
+img{
+    margin-top: -12rem;
+    width: 10rem ;
+    height: 30rem;
+}
+
