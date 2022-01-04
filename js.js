@@ -1,3 +1,4 @@
+// permet de retirer le comportement de base du bouton parceque ca crée des problèmes
 document.querySelector("#buttonSub").addEventListener("click", function(event) {
     console.log("Désolé ! preventDefault() ne vous laissera pas cocher ceci.");
     event.preventDefault();
@@ -26,7 +27,7 @@ for (i = 0; i < close.length; i++) {
     }
 }
 
-// Add a "checked" symbol when clicking on a list item
+// Permet de mettre un symbole de valider quand on clique dessus
 var list = document.querySelector('ul');
 list.addEventListener('click', function(ev) {
     if (ev.target.tagName === 'LI') {
@@ -34,13 +35,13 @@ list.addEventListener('click', function(ev) {
     }
 }, false);
 
-// Create a new list item when clicking on the "Add" button
+// Permet de créer une nouvelle ligne dans la liste (une nouvelle tache)
 function newElement() {
     var li = document.createElement("li");
     var inputValue = document.getElementById("myInput").value;
     var t = document.createTextNode(inputValue);
     li.appendChild(t);
-    if (inputValue === '') {
+    if (inputValue === '') { //test si on a bien écrit quelque chose avant de valider si non alerte
         alert("Il faur ecrire un truc ;) ");
     } else {
         document.getElementById("myUL").appendChild(li);

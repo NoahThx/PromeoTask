@@ -74,7 +74,7 @@ function deleteAll(){
 
 
     <ul id="myUL">
-        <?php foreach ($tasks as $task): ?>
+        <?php foreach ($tasks as $task): // boucle dans tableau pour affiché toutes les taches déja enregister dans la BDD?>
         <li><?= $task['taches']?></li>
         <?php endforeach; ?>
     </ul>
