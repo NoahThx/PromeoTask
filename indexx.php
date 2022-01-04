@@ -82,7 +82,7 @@ function deleteAll(){
 
 
     <div class="taskFoot">
-
+        <!-- boutton qui supprime toutes les taches (utilisation de Ajax a Faire)    -->
         <button onclick="deleteAll()">Tout éffacer</button>
 
     </div>
