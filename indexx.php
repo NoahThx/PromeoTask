@@ -8,14 +8,36 @@ if(!isset($_SESSION["username"])){
     exit();
 }
 
+//Connexion BDD + selection de toutes les taches deja relié aux users pour les afficher a la connexion
+
+    $dbh = new PDO('mysql:host=localhost;dbname=task', 'root', 'bonjour');
+    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $tasks = $dbh->query('SELECT * FROM task');
+
+
+//A FAIRE : inserer nouvelle tache dans BDD
 
 if(isset($REQUEST['tasks'])){
     $task = stripslashes($_REQUEST['username']);
-    $query = "INSERT into `task` (taches, id_user)
-              VALUES ('$task', )";
-
-
+    $task = mysqli_real_escape_string($conn, $task);
+    $query = "INSERT into `task` (taches)
+              VALUES ('$task')";
+    $res = mysqli_query($conn, $query);
+    if($res){
+        echo "test";
+    }
 }
+
+
+
+//fontion pour tout supprimer
+function deleteAll(){
+    $dbh = new PDO('mysql:host=localhost;dbname=task', 'root', 'bonjour');
+    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $delete = $dbh->query('DELETE * FROM `task`');
+}
+
+
 ?>
 <link rel="stylesheet" href="style.css">
 
@@ -44,19 +66,24 @@ if(isset($REQUEST['tasks'])){
     </div>
 
     <div id="myDIV" class="header">
-        <input type="text" id="myInput" name="tasks" placeholder="Nouvelle tache ?">
-        <button onclick="newElement()" class="addBtn">Ajouter une tache</button>
-
+       <form method="post">
+            <input type="text" id="myInput" name="tasks" placeholder="Nouvelle tache ?">
+            <button onclick="newElement()" id="buttonSub" type="submit" class="addBtn">Ajouter une tache</button>
+       </form>
     </div>
 
 
     <ul id="myUL">
-
+        <?php foreach ($tasks as $task): ?>
+        <li><?= $task['taches']?></li>
+        <?php endforeach; ?>
     </ul>
+
+
 
     <div class="taskFoot">
 
-        <button> <a href="indexx.php">Tout éffacer</a></button>
+        <button onclick="deleteAll()">Tout éffacer</button>
 
     </div>
 

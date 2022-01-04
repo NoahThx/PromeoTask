@@ -142,11 +142,13 @@ ul li {
     transition: 0.2s;
     margin-top: 0.3rem;
 
+
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
 }
+
 
 
 ul li:hover {
@@ -167,7 +169,7 @@ ul li.checked::before {
     border-style: solid;
     border-width: 0 2px 2px 0;
     top: 10px;
-    left: 16px;
+    left: 14px;
     transform: rotate(45deg);
     height: 15px;
     width: 7px;
@@ -178,7 +180,7 @@ ul li.checked::before {
     position: absolute;
     right: 0;
     top: 0;
-    padding: 12px 16px 12px 16px;
+    padding: 10px 16px 9px 16px;
 }
 
 .close:hover {

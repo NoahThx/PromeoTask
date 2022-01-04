@@ -1,3 +1,7 @@
+document.querySelector("#buttonSub").addEventListener("click", function(event) {
+    console.log("Désolé ! preventDefault() ne vous laissera pas cocher ceci.");
+    event.preventDefault();
+}, false);
 
 var myNodelist = document.getElementsByTagName("LI");
 var i;
@@ -34,7 +38,7 @@ function newElement() {
     var t = document.createTextNode(inputValue);
     li.appendChild(t);
     if (inputValue === '') {
-        alert("You must write something!");
+        alert("Il faur ecrire un truc ;) ");
     } else {
         document.getElementById("myUL").appendChild(li);
     }
